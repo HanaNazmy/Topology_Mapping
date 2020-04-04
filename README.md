@@ -1,5 +1,5 @@
 # Topology_Mapping
-PATTERN RECOGNITION CCE
+Pattern Recognition Course Alexandria University
 TOPOLOGY MAPPING
 SPECTRAL CLUSTERING AND CLUSTER EVALUATION TECHNIQUES
 
@@ -19,7 +19,7 @@ Fatma Sherif Tawfik ID:4701
 
 
 
-PROBLEM STATEMENT
+Problem Statement
 Simulating large-scale network experiments requires powerful physical resources. However, partitioning could be used to reduce the required power of the resources and to reduce the simulation time. Topology mapping is a partitioning technique that maps the simulated nodes to different physical nodes. In this assignment, we will use spectral clustering to partition a given network topology on the available physical nodes. The network topology is a graph of N nodes communicating with each other by sending data traffic through a set of edges. An edge in the topology is weighted by the traffic (Mbps) passing through it. Our clustering technique should find the cut that minimizes the traffic between different partitions
 
 Dataset
@@ -29,7 +29,7 @@ c. Each line in the file is an edge in the topology: <from, to, traffic (Mbps)>
 d. Ground truth clustering is available for topologies with sizes 10 and 50. The <ground_truth.txt> file contains a line for each topology ordered by the topology name: t_10_0, t_10_1, ..., t_50_0, t_50_1, ..., t_50_9
 e. The ground truth line consists of N values (number of nodes), where nodes having the same value are in the same cluster.
   
-ALGORITHM EXPLAINED 
+Algorithm Explained
 For topologies of sizes 10, the values of parameter k that we will try are are [2,4,6,8,10] which is stored in k_10_array. For topologies of size 50,100, the k values are [2,10,12,15,17,20,25] and are stored in the array k_50_array.
 create_adjacency_matrix
   We first call function [create_adjacency_matrix]  with parameters num, path
@@ -68,7 +68,7 @@ Calculate  Total F measure
 
 Calculate Conditional Entropy
 
-    This is very similar to the F-measure calculation. We will loop over the dictionary which represents our cluster, and each cluster is sent to the function calculate_cluster_entropy which calculates the entropy for a specific cluster. The final conditional entropy is calculated and returned.
+ This is very similar to the F-measure calculation. We will loop over the dictionary which represents our cluster, and each cluster is sent to the function calculate_cluster_entropy which calculates the entropy for a specific cluster. The final conditional entropy is calculated and returned.
 
 Normalized Cut measure
 
@@ -76,7 +76,7 @@ For topologies of size 100, we do not have the ground truth, therefore we will c
 
 Get_normalized_cut
    
-    We will construct the dictionary that holds all our clusters, then we will call the methods get_internal_weights and get_external_weights to return the intercluster and intracluster distances summed. We calculate the Total normalized cut and return the value.
+   We will construct the dictionary that holds all our clusters, then we will call the methods get_internal_weights and get_external_weights to return the intercluster and intracluster distances summed. We calculate the Total normalized cut and return the value.
 
 Returning to the evaluate spectral clustering method, we have an array best_k that will hold the value of k for each topology that scored the best measure after evaluating the clustering. 
 
